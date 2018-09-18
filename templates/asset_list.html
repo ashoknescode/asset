@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+{% block head %}
+
+  <meta charset="utf-8">
+  <title>Asset management</title>
+  <link rel="stylesheet" href="{% static 'css/custome.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container"> 
+  <div class="col-md-8 offset-col-md-2">
+   <h2 style="color: red">Asset</h2>
+   <p class="lead"></p></div>
+
+    <h1 style="color: yellow">Asset List</h1>
+      <div class="asset">
+  {% for asset in assets %}
+    <div class="asset">
+      <h4>{{ asset.author }}</h4>
+      <p style="color: black"><b>{{ asset.date }}</p></b>
+    <h2>{{ asset.item }}</h2>
+      
+    </div>
+
+    {% endfor %}
+  
+  
+</div>
+
+</div>
+
+{% endblock %}
+

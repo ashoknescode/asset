@@ -17,4 +17,21 @@
 <!-- </div> -->
 </div>
 </div>
+
+<div class="item-detail">
+	<div class="item">
+		<h2>{{ item.title }}</h2>
+		<p>{{ article.body }}</p>
+		<p>{{ article.date }}</p>
+		
+	</div>
+</div>
+
+{% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
 {% endblock %}

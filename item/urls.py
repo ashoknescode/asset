@@ -8,4 +8,5 @@ app_name = 'item'
 urlpatterns = [
 	
 	path('item/', views.home, name='hompage'),
+	path('item/', views.asset_list, name="list")
 	]
