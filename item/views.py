@@ -9,4 +9,4 @@ def homepage(request):
 
 def asset_list(request):
 	assets = Asset.objects.all().order_by('date')
-	return render(request, 'asset_list', {'assets':assets})
+	return render(request, 'asset_list.html', {'assets':assets})
