@@ -14,17 +14,24 @@
 	<div class="col-md-8 offset-md-2">
 <!-- <div class="welcome"> -->
 	<H2>Hello World</H2>
+	<!-- {{ assets }} -->
 <!-- </div> -->
 </div>
 </div>
-
+<div class="container">
+{% for asset in assets %}
 <div class="item-detail">
 	<div class="item">
-		<h2>{{ asset.author }}</h2>
+		<!-- <h2>{{ asset.author }}</h2> -->
 		<p>{{ asset.item }}</p>
-		
-		
+		<p>{{ asset.category }}</p>
+		<p>{{ asset.serial }}</p>
+		<p>{{ asset.number }}</p>
 	</div>
 </div>
+{% endfor %}
+</div>
+
+<div class="lead"></div>
 
 {% endblock %}

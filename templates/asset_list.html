@@ -1,38 +1,40 @@
 {% extends 'base.html' %}
 
 {% load staticfiles %}
+
 {% block head %}
-
-  <meta charset="utf-8">
-  <title>Asset management</title>
-  <link rel="stylesheet" href="{% static 'css/custome.css' %}">
-
+<meta charset="utf-8">
+<title>Nescode Asset Management</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
 {% endblock %}
-
 {% block content %}
-
-<div class="container"> 
-  <div class="col-md-8 offset-col-md-2">
-   <h2 style="color: red">Asset</h2>
-   <p class="lead"></p></div>
-
-    <h1 style="color: yellow">Asset List</h1>
-      <div class="asset">
-  {% for asset in assets %}
-    <div class="asset">
-      <h4>{{ asset.asset }}</h4>
-      <p style="color: black"><b>{{ asset.date }}</p></b>
-    <h2>{{ asset.item }}</h2>
-    <h3>{{ asset.category }}</h3>
-      
-    </div>
-
-    {% endfor %}
-  
-  
-</div>
-
-</div>
-
+<div class="container">      <!-- container -->
+  <h2>Welcome to Nescode Asset management Page</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <table class="list-table">   <!--Table start-->
+        <thead>
+          <tr>
+            <th>Item Name</th>
+            <th>Serial No</th>
+            <th>Category</th>
+            <th>Total Number</th>
+            <th>Value(Rs)</th>
+          </tr>
+        </thead>
+        <tr>
+          {% for asset in assets %}
+            <td>{{ asset.item }}</td>
+            <td>{{ asset.serial }}</td>
+            <td>{{ asset.category }}</td>
+            <td>{{ asset.number }}</td>
+            <td>{{ asset.value }}</td>
+        </tr>
+          {% endfor %}
+      </table>     <!--End table-->
+      <!-- <input id="myInput" type="text" placeholder="Search..">
+      <br><br> -->
+   </div>
+  </div>
+</div>  <!--End container -->
 {% endblock %}
-

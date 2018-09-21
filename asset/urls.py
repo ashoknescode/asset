@@ -20,5 +20,5 @@ from item import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage),
-    path('item/', include('item.urls')),
+    path('', include('item.urls')),
 ]

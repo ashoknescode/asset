@@ -12,7 +12,7 @@ class Asset(models.Model):
 
 		)
 
-	author = models.ForeignKey(User, on_delete=models.CASCADE)
+	# author = models.ForeignKey(User, on_delete=models.CASCADE)
 	item = models.CharField(max_length=200)
 	serial = models.CharField(max_length=25)
 	category = models.CharField(max_length=35, choices=CATEGORY_CHOICE)
@@ -21,6 +21,7 @@ class Asset(models.Model):
 	modified = models.DateTimeField(auto_now=True)
 
 	value = models.DecimalField(max_digits=19, decimal_places=2,)
+	number = models.PositiveIntegerField( default=1)
 	acquisition_date = models.DateField()
 
     
@@ -32,7 +33,5 @@ class Asset(models.Model):
 		self.published_date = timezone.now()
 		self.save()
 	    
-
-	# def __str__(self):
-	# 	return self.title
-	# 
+	def __str__(self):
+		return self.item
