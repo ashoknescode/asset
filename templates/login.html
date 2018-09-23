@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block head %}
+<meta charset="utf-8">
+<title>Nescode Asset Management</title>
+{% block title %}Login{% endblock %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+<div class="container">
+	<h2>Please first login for the items details</h2><br>
+    <form method="post" action="{% url 'login' %}">  
+    {% csrf_token %}
+
+        <table class="table-box">
+
+        	<tr>
+                <td><label for="id_username">Username</label></td>
+                <td><input id="id_username" name="username" 
+                   type="text" class="form-control"></td>
+            </tr>
+            <tr>
+               <td><label for="id_password">Password</label></td>
+               <td><input id="id_password" name="password" 
+                type="password" class="form-control"></td>
+            </tr>
+        <!-- <tr>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.password.label_tag }}</td>
+            <td>{{ form.password }}</td>
+        </tr> -->
+        </table>
+
+        <input type="submit" value="login" />
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+    </div>
+{% endblock %}
