@@ -23,14 +23,14 @@ def signup(request):
 def loginview(request):
     if request.method == 'POST':
         user = authenticate(username=request.POST['username'],password=request.POST['pwd1'])
-
+        
         if user is not None:
             login(request,user)
 
             if 'next' in request.POST:
                 return redirect(request.POST['next'])
 
-            return redirect('homepage')
+            return redirect('/')
         else:
             return render(request, 'accounts/login.html',{'error_key':'Username and Password Didn\'t Match'})
 
@@ -40,4 +40,4 @@ def loginview(request):
 @login_required
 def logoutview(request):
     logout(request)
-    return redirect('homepage')
+    return redirect('/')

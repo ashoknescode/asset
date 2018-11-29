@@ -12,8 +12,11 @@ def homepage(request):
 
 @login_required
 def asset_list(request):
-	assets = Asset.objects.all()
-	return render(request, 'asset_list.html', {'assets':assets})
+	if request.user.is_superuser:
+		assets = Asset.objects.all()
+		return render(request, 'asset_list.html', {'assets':assets})
+	else:
+		return render(request, 'accounts/signup.html')
 
-def list(request):
-	return render(request, 'list.html')
+# def list(request):
+# 	return render(request, 'list.html')

@@ -45,6 +45,9 @@
         <li class="nav-item">
         <a class="nav-link Disabled" href="{% url 'accounts:loginview' %}">Login</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'email' %}">Contact Us</a>
+      </li>
       {% endif %}
     </ul>
 
@@ -58,6 +61,57 @@
   {% block content %}
 
   {% endblock %}
+
+  <div class="push"></div>
+  <div class="footercustom">
+    <div class="Footer">
+      <div class="container">
+        <footer>
+          <div class="row">
+            <div class="col-md-4">
+              <img class="circular-square img-thumbnail" height="107" src="{% static 'img/ak.jpg' %}" width="107"/>
+              <h5>Ashok Kumar<sub>Developer</sub></h5><br>
+              <h6></h6>
+              <div class="copyright">
+                
+                <a href="mailto:#"></a>
+              </div>
+              </address>
+            </div>
+            
+            <div class="col-md-4">
+              <h5>Product & Services</h5>
+              <ul class="list-unstyled textfooter">
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">ERP</a></li>
+                <li><a href="#">Ecommerce</a></li>
+              </ul>
+              </div>
+
+              <div class="col-md-4">
+                <address>
+                  <h5>Nescode Technologies Pvt Ltd.</h5><br>
+                  <div class="copyright">
+                    #47/5, MR Complex<br>Kuldu Main Road, Bangalore<br>Karnataka, India.<abbr title="phone">P:</abbr>+91 7531012759
+                    
+                </address>
+                
+                <a href="mailto:#"></a>
+                <ul class="list-inline">
+                  <a href=""><img class="circle-square" src="" alt="" border="" height="" width=""></a>
+           <a href=""><img class="circle-square" src="" alt="" border="" height="" width=""></a>
+           <a href=""><img class="circle-square" src="" alt="" border="" height="" width=""></a>
+           <a href=""><img class="circle-square" src="" alt="" border="" height="" width=""></a>     </ul>
+              </div>
+          </div>
+          <p class="copyright">&copy; 2011-2018 Nescode Technologies All right reserved</p>
+        </footer>
+        
+      </div>
+      
+    </div>
+    
+  </div>
 
     <!-- <h1>Hello, world!</h1> -->
 

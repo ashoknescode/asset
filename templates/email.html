@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% load staticfiles %}
+
+{% block head %}
+<meta charset="utf-8">
+<title>Nescode Asset Management</title>
+{% block title %}Login{% endblock %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+<h1>Contact Us</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="form-actions">
+      <button type="submit">Send</button>
+    </div>
+</form>
+</div>   <!--End container -->
+{% endblock %}

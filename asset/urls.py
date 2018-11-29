@@ -19,7 +19,8 @@ from item import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homepage),
+    path('', views.homepage, name='homepage'),
+    path('', include('sendemail.urls')),
     path('accounts/', include('accounts.urls')),
     path('item/', include('item.urls')),
 ]
